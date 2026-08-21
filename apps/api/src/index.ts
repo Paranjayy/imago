@@ -42,7 +42,7 @@ v1.post('/generate', async (c) => {
     return c.json({ results, prompt: body.prompt, providers, took_ms })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
-    return c.json({ error: { code: 'SEARCH_ERROR', message } }, 500)
+    return c.json({ error: { code: 'GENERATE_ERROR', message } }, 500)
   }
 })
 
