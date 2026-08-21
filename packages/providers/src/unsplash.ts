@@ -2,7 +2,6 @@ import type {
   ImageProvider,
   ImageResult,
   SearchParams,
-  GenerateParams,
 } from '@imago/types'
 
 interface UnsplashPhoto {
@@ -93,3 +92,8 @@ export class UnsplashProvider implements ImageProvider {
 export function createUnsplashProvider(accessKey: string): UnsplashProvider {
   return new UnsplashProvider(accessKey)
 }
+
+// Singleton instance — uses UNSPLASH_ACCESS_KEY env var, falls back to empty string
+export const unsplashProvider = new UnsplashProvider(
+  (typeof process !== 'undefined' ? process.env['UNSPLASH_ACCESS_KEY'] : undefined) ?? ''
+)

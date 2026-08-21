@@ -1,1 +1,1 @@
-export { UnsplashProvider, createUnsplashProvider } from './unsplash.js'
+export { UnsplashProvider, createUnsplashProvider, unsplashProvider } from './unsplash.js'
