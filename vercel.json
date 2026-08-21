@@ -1,7 +1,6 @@
 {
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  }
+  "framework": "nextjs",
+  "buildCommand": "pnpm turbo build --filter=@imago/web...",
+  "outputDirectory": "apps/web/.next",
+  "installCommand": "pnpm install"
 }

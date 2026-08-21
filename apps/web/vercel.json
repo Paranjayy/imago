@@ -1,6 +1,6 @@
 {
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "buildCommand": "cd ../.. && pnpm --filter @imago/types build && pnpm --filter @imago/web build",
-  "outputDirectory": ".next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "cd ../.. && pnpm install && pnpm --filter @imago/types build && cd apps/web && pnpm build",
+  "installCommand": "echo 'skip'",
+  "outputDirectory": ".next"
 }
