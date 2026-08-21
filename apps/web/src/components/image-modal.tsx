@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import type { ImageResult } from '@imago/types'
 
 interface ImageModalProps {
@@ -30,11 +31,14 @@ export function ImageModal({ image, onClose }: ImageModalProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <div className="relative overflow-hidden" style={{ maxHeight: '70vh' }}>
-          <img
+        <div className="relative w-full overflow-hidden" style={{ maxHeight: '70vh' }}>
+          <Image
             src={image.thumb}
-            alt={image.description ?? ''}
+            alt={image.description ?? image.source}
+            width={image.width}
+            height={image.height}
             className="w-full object-contain"
+            unoptimized
           />
         </div>
         <div className="flex items-center justify-between border-t border-zinc-800 p-4">
@@ -65,3 +69,4 @@ export function ImageModal({ image, onClose }: ImageModalProps) {
     </div>
   )
 }
+

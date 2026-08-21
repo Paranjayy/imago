@@ -13,7 +13,7 @@ export function ImageGrid({ images, onImageClick, loading }: ImageGridProps) {
     return (
       <div className="columns-2 gap-4 sm:columns-3 lg:columns-4">
         {Array.from({ length: 12 }).map((_, i) => (
-          <div key={i} className="mb-4 animate-pulse rounded-lg bg-zinc-800" style={{ height: `${160 + (i % 3) * 60}px` }} />
+          <div key={i} className="mb-4 break-inside-avoid animate-pulse rounded-lg bg-zinc-800" style={{ height: `${160 + (i % 3) * 60}px` }} />
         ))}
       </div>
     )
