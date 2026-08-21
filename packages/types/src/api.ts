@@ -1,4 +1,5 @@
-import type { ImageResult, ProviderInfo } from './index.js'
+import type { ImageResult } from './image.js'
+import type { ProviderInfo } from './provider.js'
 
 export interface SearchResponse {
   results: ImageResult[]
