@@ -1,4 +1,4 @@
-import type { ImageResult, SearchParams, GenerateParams } from '@imago/types'
+import type { ImageResult, SearchParams, GenerateParams, ProviderInfo } from '@imago/types'
 import type { ProviderRegistry } from './registry.js'
 
 export interface SearchResult {
@@ -73,6 +73,10 @@ export class Router {
       providers: successfulProviders,
       took_ms: Date.now() - start,
     }
+  }
+
+  async providerInfos(): Promise<ProviderInfo[]> {
+    return this.registry.providerInfos()
   }
 
   async generate(params: GenerateParams): Promise<GenerateResult> {
