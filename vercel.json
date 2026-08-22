@@ -1,6 +1,6 @@
 {
-  "framework": "nextjs",
-  "buildCommand": "pnpm turbo build --filter=@imago/web...",
+  "framework": null,
+  "buildCommand": "pnpm --filter @imago/types build && pnpm --filter @imago/web build",
   "outputDirectory": "apps/web/.next",
   "installCommand": "pnpm install"
 }
