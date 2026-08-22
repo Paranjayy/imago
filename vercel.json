@@ -1,6 +1,17 @@
 {
-  "framework": null,
+  "version": 2,
   "buildCommand": "pnpm --filter @imago/types build && pnpm --filter @imago/providers build && pnpm --filter @imago/core build && pnpm --filter @imago/api build",
-  "outputDirectory": "apps/api",
-  "installCommand": "pnpm install"
+  "installCommand": "pnpm install",
+  "builds": [
+    {
+      "src": "apps/api/dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/api/dist/index.js"
+    }
+  ]
 }
