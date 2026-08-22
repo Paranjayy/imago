@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "pnpm --filter @imago/types build && pnpm --filter @imago/web build",
-  "outputDirectory": "apps/web/.next",
+  "buildCommand": "pnpm --filter @imago/types build && pnpm --filter @imago/providers build && pnpm --filter @imago/core build && pnpm --filter @imago/api build",
+  "outputDirectory": "apps/api",
   "installCommand": "pnpm install"
 }
